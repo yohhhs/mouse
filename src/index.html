@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+    <title>地鼠小游戏</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<div id="gameNav" class="game-nav">
+    <div class="game-nav-content">
+        <div id="startGame" class="start-game"></div>
+        <div class="btn-wrapper">
+            <div id="goGameRule" class="game-rule-btn common-btn"></div>
+            <div id="goLookRank" class="look-rank common-btn"></div>
+        </div>
+    </div>
+</div>
+<div id="gameInfoPage" class="info-fill">
+    <div class="game-info-wrapper">
+        <img class="game-info-bg" src="./img/info-bg.png" alt="">
+        <div class="input-wrapper">
+            <div class="input-item">
+                <img src="./img/info-name.png" alt="">
+                <div class="input-border">
+                    <input id="name" type="text">
+                </div>
+            </div>
+            <div class="input-item">
+                <img src="./img/info-tel.png" alt="">
+                <div class="input-border">
+                    <input id="tel" type="text">
+                </div>
+            </div>
+            <div class="input-item">
+                <img src="./img/info-code.png" alt="">
+                <div class="input-border">
+                    <input id="code" type="text">
+                </div>
+            </div>
+        </div>
+        <div id="infoConfirm" class="common-btn info-confirm"></div>
+    </div>
+</div>
+<div id="gameRulePage" class="game-rule">
+    <div class="game-rule-text">
+        <img class="rule-text" src="./img/rule-text.png" alt="">
+        <img id="ruleBackBtn" class="back-btn common-btn" src="./img/rule-back.png">
+    </div>
+</div>
+<div id="gameRankPage" class="game-rank">
+    <div class="game-rank-wrapper">
+        <img class="game-list-bg" src="./img/rank-list-bg.png" alt="">
+        <p id="myRank" class="my-rank">
+            <span>sdfg</span>
+            <span>sdfg</span>
+            <span>sdfg</span>
+        </p>
+        <ul id="rankList" class="rank-item-wrapper">
+        </ul>
+    </div>
+    <div class="btn-wrapper">
+        <div id="rankPlay" class="common-btn rank-play-again"></div>
+        <div id="rankBack" class="common-btn rank-back"></div>
+    </div>
+
+</div>
+<div id="gameContainer" class="container">
+    <div class="grade-wrapper">
+        得分：<span id="grade">313</span>
+    </div>
+    <div id="ds" class="diShu">
+    </div>
+    <canvas>对不起。。。</canvas>
+    <div id="mask" class="mask"></div>
+    <div id="panl" class="panl">
+        <img class="panl-bg" src="./img/panl.png" alt="">
+        <span id="panlGrade" class="panl-grade">546</span>
+        <div class="btn-wrapper">
+            <div id="goPanlRank" class="common-btn rank-play-again"></div>
+            <div id="panlAgain" class="common-btn rank-back"></div>
+        </div>
+    </div>
+
+</div>
+<audio id="music" src="./assets/bg-music.mp3" loop style="visibility: hidden;position: relative;z-index: -9999;">
+</audio>
+<!--<img id="temp" src="./img/ds.png">-->
+<script src="./assets/zepto.min.js"></script>
+<script src="./js/index.js"></script>
+</body>
+</html>

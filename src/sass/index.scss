@@ -1,0 +1,245 @@
+@import 'base/reset.scss';
+
+.container, .game-rule, .game-nav, .game-rank, .info-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  z-index: 95;
+}
+.game-rule, .game-rank, .info-fill {
+  background: url("../img/rule-bg.jpg") no-repeat center center / cover;
+}
+.container {
+  background: url("../img/gamebg.jpg") no-repeat center center / cover;
+  .grade-wrapper {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding-left: 60px;
+    width: 170px;
+    height: 60px;
+    line-height: 80px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    background: url("../img/grade-bg.png") no-repeat center / 100% 100%;
+  }
+  .diShu img, .diShu .active{
+    position: absolute;
+    margin-left: 4px;
+    margin-bottom: 4px;
+    width: 80px;
+    transform: scale(0);
+    transform-origin: center bottom;
+    transition: transform .4s ease-out;
+  }
+  .diShu .active {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  canvas,.diShu{
+    position: absolute;
+    left: 50%;
+    width: 72%;
+    height: auto;
+    max-width: 1000px;
+    max-height: 1000px;
+    transform: translate(-50%,0%);
+    -webkit-transform: translate(-50%,0%);/*居中*/
+    margin-top: 70%;
+  }
+  .diShu {z-index: 2;}
+  #temp{
+    position: fixed;
+    top: 200%;
+    left: 200%;
+    transform: scale(0.1);
+    -webkit-transform: scale(0.1);
+  }
+  .panl {
+    position: absolute;
+    width: 300px;
+    top: 200px;
+    left: 50%;
+    margin-left: -150px;
+    z-index: 9;
+    display: none;
+    .panl-bg {
+      width: 100%;
+      height: 240px;
+    }
+    .panl-grade {
+      position: absolute;
+      top: 140px;
+      width: 100%;
+      display: block;
+      text-align: center;
+      font-size: 60px;
+      font-weight: bold;
+      color: #FFF000;
+    }
+    .btn-wrapper {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .rank-play-again {
+      background: url("../img/panl-rank.png") no-repeat center / contain;
+    }
+    .rank-back {
+      background: url("../img/panl-again.png") no-repeat center / contain;
+    }
+  }
+  .mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0 ,0 , 0, 0.4);
+    z-index: 2;
+    display: none;
+  }
+}
+.common-btn {
+  width: 120px;
+  height: 45px;
+}
+.game-nav {
+  background: url("../img/index-bg.jpg") no-repeat center center / cover;
+  .game-nav-content {
+    position: absolute;
+    top: 60%;
+    width: 100%;
+  }
+  .start-game {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background: url("../img/start-game.png") no-repeat center / contain;
+  }
+  .btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    .game-rule-btn, .look-rank {
+      margin: 0 20px;
+    }
+    .game-rule-btn {
+      background: url("../img/game-rule-btn.png") no-repeat center / contain;
+    }
+    .look-rank {
+      background: url("../img/look-rank.png") no-repeat center / contain;
+    }
+  }
+}
+.game-rule {
+  .game-rule-text {
+    position: relative;
+    margin: 80px auto 0;
+    width: 90%;
+    .rule-text {
+      width: 100%;
+    }
+    .back-btn {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      margin-left: -60px;
+    }
+  }
+}
+.game-rank {
+  .game-rank-wrapper {
+    position: relative;
+    margin: 80px auto 0;
+    width: 90%;
+    .game-list-bg {
+      width: 100%;
+    }
+    .my-rank {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      display: flex;
+      justify-content: space-between;
+      width: 60%;
+      color: red;
+      font-weight: bold;
+      transform: translateX(-50%);
+    }
+    .rank-item-wrapper {
+      position: absolute;
+      top: 42%;
+      left: 50%;
+      width: 60%;
+      color: #ffdd16;
+      transform: translateX(-50%);
+    }
+    .rank-item {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .btn-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  .rank-play-again {
+    margin: 0 10px;
+    background: url("../img/rank-play-again.png") no-repeat center / contain;
+  }
+  .rank-back {
+    margin: 0 10px;
+    background: url("../img/rule-back.png") no-repeat center / contain;
+  }
+}
+.info-fill {
+  display: block;
+  .game-info-wrapper {
+    position: relative;
+    margin: 80px auto 0;
+    width: 90%;
+  }
+  .game-info-bg {
+    width: 100%;
+  }
+  .input-wrapper {
+    position: absolute;
+    width: 52%;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .input-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    img {
+      width: 60px;
+    }
+    .input-border {
+      margin-left: 2px;
+      border-bottom: 1px solid #FFF000;
+    }
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #FFF000;
+    }
+  }
+  .info-confirm {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    margin-left: -60px;
+    background: url("../img/info-confirm.png") no-repeat center / contain;
+  }
+}
