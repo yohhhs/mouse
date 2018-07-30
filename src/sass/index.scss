@@ -14,6 +14,72 @@
 }
 .container {
   background: url("../img/gamebg.jpg") no-repeat center center / cover;
+  .dm {
+    position: absolute;
+    bottom: 110px;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: url("../img/dd.png");
+    background-size: 100px 100px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    .dd-item {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      .ms-img {
+        position: absolute;
+        bottom: 43px;
+        left: 5px;
+        width: 80px;
+        transform: scale(0);
+        transform-origin: center bottom;
+        transition: transform .4s ease-out;
+        &.active {
+          transform: scale(1);
+        }
+      }
+      .ra-img {
+        position: absolute;
+        bottom: 40px;
+        left: 17px;
+        width: 65px;
+        transform: scale(0);
+        transform-origin: center bottom;
+        transition: transform .4s ease-out;
+        &.active {
+          transform: scale(1);
+        }
+      }
+      .f-score, .t-score {
+        font-size: 28px;
+        font-weight: bold;
+        color: #fff;
+        display: none;
+      }
+      .f-score {
+        position: absolute;
+        top: -60px;
+        width: 100%;
+        text-align: center;
+      }
+      .t-score {
+        position: absolute;
+        top: -60px;
+        width: 100%;
+        text-align: center;
+      }
+      .cz {
+        position: absolute;
+        width: 80px;
+        left: 30px;
+        bottom: 50px;
+        display: none;
+      }
+    }
+  }
   .grade-wrapper {
     position: absolute;
     top: 20px;
@@ -27,44 +93,13 @@
     font-weight: bold;
     background: url("../img/grade-bg.png") no-repeat center / 100% 100%;
   }
-  .diShu img, .diShu .active{
-    position: absolute;
-    margin-left: 4px;
-    margin-bottom: 4px;
-    width: 80px;
-    transform: scale(0);
-    transform-origin: center bottom;
-    transition: transform .4s ease-out;
-  }
-  .diShu .active {
-    transform: scale(1);
-    -webkit-transform: scale(1);
-  }
-  canvas,.diShu{
-    position: absolute;
-    left: 50%;
-    width: 72%;
-    height: auto;
-    max-width: 1000px;
-    max-height: 1000px;
-    transform: translate(-50%,0%);
-    -webkit-transform: translate(-50%,0%);/*居中*/
-    margin-top: 70%;
-  }
-  .diShu {z-index: 2;}
-  #temp{
-    position: fixed;
-    top: 200%;
-    left: 200%;
-    transform: scale(0.1);
-    -webkit-transform: scale(0.1);
-  }
   .panl {
     position: absolute;
     width: 300px;
-    top: 200px;
+    top: 50%;
     left: 50%;
     margin-left: -150px;
+    transform: translateY(-50%);
     z-index: 9;
     display: none;
     .panl-bg {
@@ -110,6 +145,7 @@
 }
 .game-nav {
   background: url("../img/index-bg.jpg") no-repeat center center / cover;
+  display: block;
   .game-nav-content {
     position: absolute;
     top: 60%;
@@ -119,7 +155,7 @@
     margin: 0 auto;
     width: 100px;
     height: 100px;
-    background: url("../img/start-game.png") no-repeat center / contain;
+    background: url("../img/start-game.png") no-repeat center / 100% 100%;
   }
   .btn-wrapper {
     display: flex;
@@ -129,10 +165,10 @@
       margin: 0 20px;
     }
     .game-rule-btn {
-      background: url("../img/game-rule-btn.png") no-repeat center / contain;
+      background: url("../img/game-rule-btn.png") no-repeat center /  100% 100%;
     }
     .look-rank {
-      background: url("../img/look-rank.png") no-repeat center / contain;
+      background: url("../img/look-rank.png") no-repeat center /  100% 100%;
     }
   }
 }
@@ -156,10 +192,9 @@
   .game-rank-wrapper {
     position: relative;
     margin: 80px auto 0;
-    width: 90%;
-    .game-list-bg {
-      width: 100%;
-    }
+    width: 360px;
+    height: 432px;
+    background: url("../img/rank-list-bg.png") no-repeat center / 100% 100%;
     .my-rank {
       position: absolute;
       top: 25%;
@@ -170,6 +205,14 @@
       color: red;
       font-weight: bold;
       transform: translateX(-50%);
+      .single {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        display: none;
+      }
     }
     .rank-item-wrapper {
       position: absolute;
@@ -192,22 +235,20 @@
   }
   .rank-play-again {
     margin: 0 10px;
-    background: url("../img/rank-play-again.png") no-repeat center / contain;
+    background: url("../img/rank-play-again.png") no-repeat center /  100% 100%;
   }
   .rank-back {
     margin: 0 10px;
-    background: url("../img/rule-back.png") no-repeat center / contain;
+    background: url("../img/rule-back.png") no-repeat center /  100% 100%;
   }
 }
 .info-fill {
-  display: block;
   .game-info-wrapper {
     position: relative;
     margin: 80px auto 0;
-    width: 90%;
-  }
-  .game-info-bg {
-    width: 100%;
+    width: 360px;
+    height: 432px;
+    background: url("../img/info-bg.png") no-repeat center / 100% 100%;
   }
   .input-wrapper {
     position: absolute;
@@ -229,6 +270,7 @@
     }
     input {
       width: 100%;
+      font-size: 18px;
       border: none;
       outline: none;
       background: transparent;
@@ -240,6 +282,6 @@
     bottom: 50px;
     left: 50%;
     margin-left: -60px;
-    background: url("../img/info-confirm.png") no-repeat center / contain;
+    background: url("../img/info-confirm.png") no-repeat center /  100% 100%;
   }
 }
