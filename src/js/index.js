@@ -8,6 +8,7 @@ var t,t2;
 var hsRats = []
 
 window.onload = function(){
+    $('#music')[0].play()
       //initGame();//初始化游戏
 };
 function initGame(){
