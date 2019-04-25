@@ -285,3 +285,11 @@
     background: url("../img/info-confirm.png") no-repeat center /  100% 100%;
   }
 }
+.jy-icon {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  z-index: 9999;
+}

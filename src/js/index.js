@@ -10,6 +10,13 @@ var hsRats = []
 window.onload = function(){
     $('#music')[0].play()
       //initGame();//初始化游戏
+    $('#toggleJY').click(function () {
+        if ($('#music')[0].paused) {
+            $('#music')[0].play()
+        } else {
+            $('#music')[0].pause()
+        }
+    })
 };
 function initGame(){
     $('#music')[0].play()
